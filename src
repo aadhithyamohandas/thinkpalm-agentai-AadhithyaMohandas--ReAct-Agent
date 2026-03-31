@@ -4,8 +4,8 @@ def get_current_time():
     return str(datetime.datetime.now())
 def celsius_to_fahrenheit(c):
     return str((float(c) * 9/5) + 32)
-def count_words(text):
-    return str(len(text.split()))
+def calculator(exp):
+    return str(eval(exp))   
 
 def agent(query):
     print("User:", query)
