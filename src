@@ -1,0 +1,26 @@
+import datetime
+
+def get_current_time():
+    return str(datetime.datetime.now())
+def celsius_to_fahrenheit(c):
+    return str((float(c) * 9/5) + 32)
+def count_words(text):
+    return str(len(text.split()))
+
+def agent(query):
+    print("User:", query)
+
+    if any(x in query for x in ["+", "-", "*", "/"]):
+        print("Thought: This is math")
+        result = calculator(query)
+        print("Final Answer:", result)
+
+    elif "time" in query.lower():
+        print("Thought: Need current time")
+        result = get_current_time()
+        print("Final Answer:", result)
+
+    elif "convert" in query.lower():
+        print("Thought: Need conversion")
+        result = celsius_to_fahrenheit(30)
+        print("Final Answer:", result)
